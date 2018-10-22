@@ -9,7 +9,7 @@ public class WebInitializer extends AbstractAnnotationConfigDispatcherServletIni
 
     @Override
     protected Class<?>[] getRootConfigClasses() {
-		return new Class[] { SecConfig.class };
+		return new Class[] {  };
     }
 
     @Override
@@ -24,6 +24,6 @@ public class WebInitializer extends AbstractAnnotationConfigDispatcherServletIni
 
     @Override
     protected Filter[] getServletFilters() {
-        return new Filter[] {new ResourceUrlEncodingFilter()};
+        return new Filter[] {new HttpServletRequestResponseWrapperFilter(), new ResourceUrlEncodingFilter()};
     }
 }
